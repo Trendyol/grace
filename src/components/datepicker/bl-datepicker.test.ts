@@ -1,16 +1,16 @@
 import { aTimeout, expect, fixture, html } from "@open-wc/testing";
-import { BlButton, BlDatePicker } from "../../baklava";
-import { CALENDAR_TYPES } from "../calendar/bl-calendar.constant";
 import sinon from "sinon";
+import { BlButton, BlDatepicker } from "../../baklava";
+import { CALENDAR_TYPES } from "../calendar/bl-calendar.constant";
 import "./bl-datepicker";
 
 describe("BlDatepicker", () => {
-  let element: BlDatePicker;
+  let element: BlDatepicker;
   let getElementByIdStub: sinon.SinonStub;
   let consoleWarnSpy: sinon.SinonSpy;
 
   beforeEach(async () => {
-    element = await fixture<BlDatePicker>(html`
+    element = await fixture<BlDatepicker>(html`
       <bl-datepicker type="single" locale="en"></bl-datepicker>`);
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -285,7 +285,7 @@ describe("BlDatepicker", () => {
   });
 
   it("should warn when 'value' is not an array for multiple/range selection", async () => {
-    element = await fixture<BlDatePicker>(html`
+    element = await fixture<BlDatepicker>(html`
       <bl-datepicker type="multiple" locale="en"></bl-datepicker>`);
     element.value = new Date();
 
